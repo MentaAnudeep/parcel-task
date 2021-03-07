@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel delivery system</title>
+    <style>
+        .content {
+          max-width: 500px;
+          margin: auto;
+        }
+        </style>
+        <script>
+             async function loadDoc() {
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function(data) {
+               // console.log("Hi!!!" + data.data);
+                console.log(this.responseText);
+
+              };
+              xhttp.open("POST", "http://localhost:3000/parcel", true);
+              xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              xhttp.send("serviceid=P001");
+            // var data = document.getElementById('parcel');
+            // console.log(data);
+            // console.log("Hello");
+             }
+            </script>
+</head>
+<body class="content"> 
+    <h3>Parcel Delivery System</h3>
+    <h4>Tracking parcel status</h4>
+    
+    <form>
+        <label>Enter the parcel id :</label>
+        <input type=”text” id="parcel" placeholder="Parcel num">
+        <br>
+        <button onclick="loadDoc()">Submit</button>
+    </form>
+
+    <!-- <form action=”/” method=”post”>
+        <label>Enter the parcel id :</label>
+        <input type=”text” name="parcel" placeholder="Parcel num">
+        
+        <button type=”submit” value=”submit”>
+        
+        </form> -->
+    
+</body>
+</html>
